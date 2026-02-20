@@ -1,0 +1,18 @@
+import Project2 from "./Projects/Project2.jsx";
+import Project3 from "./Projects/Project3.jsx";
+import Project4 from "./Projects/Project4.jsx";
+import Project5 from "./Projects/Project5.jsx";
+
+function ProjectArea({ activeProject }) {
+  return (
+    <>
+      {activeProject === 1 && <h1>This is Project 1</h1>}
+      {activeProject === 2 && <Project2 />}
+      {activeProject === 3 && <Project3 />}
+      {activeProject === 4 && <Project4 />}
+      {activeProject === 5 && <Project5 />}
+    </>
+  );
+}
+
+export default ProjectArea;
