@@ -1,4 +1,6 @@
+import RandomColor from "./RandomColor";
+
 function Project4() {
-  return <h1>Project 4</h1>;
+  return <RandomColor />;
 }
 export default Project4;

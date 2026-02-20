@@ -68,3 +68,32 @@
   color: red;
   font-weight: bold;
 }
+
+/* Style for Projekt 4 */
+.random-color-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.random-color-btn {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 2px solid #000;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.random-color-label {
+  margin: 0;
+  font-size: 14px;
+}
+
+.random-color-value {
+  margin: 0;
+  font-size: 32px;
+}
