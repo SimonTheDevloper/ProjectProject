@@ -2,6 +2,11 @@ import { useState } from "react";
 
 function RandomColor() {
   const [randomColor, setRandomColor] = useState("rgb(195, 255, 246)");
+
+  const handleCopy = (rgb) => {
+    navigator.clipboard.writeText(rgb);
+  };
+
   function generateRandomRGB() {
     const randomRed = Math.floor(Math.random() * 256);
     const randomGreen = Math.floor(Math.random() * 256);
@@ -23,7 +28,12 @@ function RandomColor() {
       </button>
 
       <h3 className="random-color-label">RGB Color:</h3>
-      <h1 className="random-color-value">{randomColor}</h1>
+      <h1
+        className="random-color-value"
+        onClick={() => handleCopy(randomColor)}
+      >
+        {randomColor}
+      </h1>
     </div>
   );
 }

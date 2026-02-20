@@ -96,4 +96,5 @@
 .random-color-value {
   margin: 0;
   font-size: 32px;
+  cursor: pointer;
 }
