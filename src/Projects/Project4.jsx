@@ -7,6 +7,7 @@ function Project4() {
 
   const handleCopy = (rgb) => {
     navigator.clipboard.writeText(rgb);
+    alert("Copied");
   };
 
   function generateRandomRGB() {
