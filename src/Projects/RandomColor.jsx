@@ -1,7 +1,9 @@
 import { useState } from "react";
+import CopyModal from "./CopyModal";
 
 function RandomColor() {
   const [randomColor, setRandomColor] = useState("rgb(195, 255, 246)");
+  const [showCopyModal, setShowCopyModal] = useState(false);
 
   const handleCopy = (rgb) => {
     navigator.clipboard.writeText(rgb);
@@ -26,7 +28,12 @@ function RandomColor() {
       <button className="random-color-btn" onClick={handleClickBtn}>
         Generate Random Color
       </button>
-
+      <button className="info-btn" onClick={() => setShowCopyModal(true)}>
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/545/545674.png"
+          alt="info"
+        />
+      </button>
       <h3 className="random-color-label">RGB Color:</h3>
       <h1
         className="random-color-value"
@@ -34,6 +41,9 @@ function RandomColor() {
       >
         {randomColor}
       </h1>
+      {showCopyModal && (
+        <CopyModal onGotItClick={() => setShowCopyModal(false)} />
+      )}
     </div>
   );
 }

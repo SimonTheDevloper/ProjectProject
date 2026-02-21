@@ -69,8 +69,10 @@
   font-weight: bold;
 }
 
-/* Style for Projekt 4 */
+/* Project Randpom Color*/
+
 .random-color-container {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -78,23 +80,77 @@
   align-items: center;
   gap: 16px;
   font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease; /* damit es einen leichten übergan gib und nicht so ein Flackern*/
+}
+
+.info-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.info-btn img {
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
+}
+
+.info-btn:hover img {
+  opacity: 1;
 }
 
 .random-color-btn {
   padding: 10px 16px;
   font-size: 16px;
   border: 2px solid #000;
-  background-color: #ffffff;
+  background-color: #fff;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .random-color-label {
   margin: 0;
   font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .random-color-value {
   margin: 0;
   font-size: 32px;
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  border-radius: 8px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #eee;
+  border-radius: 4px;
 }
