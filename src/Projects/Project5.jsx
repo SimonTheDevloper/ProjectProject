@@ -1,13 +1,13 @@
 import { useState } from "react";
 import CounterBtn from "./CounterBtn.jsx";
+import CustomBtnPopUp from "./customBtnPopUp.jsx";
+import { evaluate } from "mathjs";
 
 function Project5() {
   const [count, setCount] = useState(0);
   const [amount, setAmount] = useState(1);
   const [error, setError] = useState(null);
-  const maxLimitAmount = 100;
-
-  const BtnListe = [
+  const [btns, setBtns] = useState([
     { label: "+", action: () => setCount((a) => a + 1) },
     { label: "-", action: () => setCount((a) => a - 1) },
     { label: "reset", action: () => setCount(0) },
@@ -23,7 +23,32 @@ function Project5() {
     { label: "round off", action: () => setCount((a) => Math.abs(a)) },
     { label: "round up", action: () => setCount((a) => Math.ceil(a)) },
     { label: "10%", action: () => setCount((a) => a * 0.1) },
-  ];
+  ]);
+  const [newLabel, setNewLabel] = useState("");
+  const [newValue, setNewValue] = useState(0);
+  const [showCustomBtnPopUp, setShowCustomBtnPopUp] = useState(false);
+  const maxLimitAmount = 100;
+
+  const addEigenenBtn = () => {
+    const newBtn = {
+      label: newLabel,
+      action: () =>
+        setCount((a) => {
+          try {
+            // Rechnet z.B. "5 * 12" mit mathjs
+            return evaluate(`${a} ${newValue}`);
+          } catch (err) {
+            console.error("Ungültige Mathe-Eingabe:", newValue);
+            return a; // Wenn es ein Fehler war, bleibt der Wert gleich
+          }
+        }),
+    };
+    setBtns([...btns, newBtn]);
+    setShowCustomBtnPopUp(false);
+    setNewLabel("");
+    setNewValue("");
+  };
+
   const handleOnChange = (e) => {
     const value = Number(e.target.value);
 
@@ -43,10 +68,26 @@ function Project5() {
         </p>
 
         <div className="buttons">
-          {BtnListe.map((item, index) => (
+          {btns.map((item, index) => (
             <CounterBtn key={index} text={item.label} onClick={item.action} />
           ))}
+          <button
+            className="addCustomBtn"
+            onClick={() => setShowCustomBtnPopUp(true)}
+          >
+            add Custom Button
+          </button>
         </div>
+        {showCustomBtnPopUp && (
+          <CustomBtnPopUp
+            newLabel={newLabel}
+            setNewLabel={setNewLabel}
+            newValue={newValue}
+            setNewValue={setNewValue}
+            onSave={addEigenenBtn}
+            onCancel={() => setShowCustomBtnPopUp(false)}
+          />
+        )}
 
         <div className="amount">
           <p>Step size:</p>
