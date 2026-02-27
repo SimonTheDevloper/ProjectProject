@@ -80,7 +80,7 @@
   align-items: center;
   gap: 16px;
   font-family: Arial, sans-serif;
-  transition: background-color 0.3s ease; /* damit es einen leichten übergan gib und nicht so ein Flackern*/
+  transition: background-color 0.3s ease;
 }
 
 .info-btn {
@@ -126,8 +126,6 @@
   padding: 5px 15px;
   border-radius: 8px;
 }
-
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -153,4 +151,94 @@
   border: 1px solid #ddd;
   background: #eee;
   border-radius: 4px;
+}
+.prot5 {
+  margin: 0;
+  background: #f9f7f2;          
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #25231f;
+  line-height: 1.4;
+}
+.counter {
+  max-width: 640px;
+  margin: 80px auto;
+  padding: 68px 52px;
+  background: #fffef9;           
+  border-radius: 28px;
+  border: 1px solid #e4ded4;     
+  text-align: center;
+}
+.counter p {
+  font-size: 20px;
+  color: #6b665c;             
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.counter span {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -10px;
+  color: #25231f;
+  display: block;
+  margin: 20px 0 48px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.buttons button {
+  padding: 21px 38px;
+  font-size: 21px;
+  font-weight: 600;
+  border: 2px solid #e4ded4;
+  border-radius: 18px;
+  background: #fffef9;
+  cursor: pointer;
+  min-width: 138px;
+}
+.buttons button:nth-child(1) { 
+  background: #3a7063;        
+  color: white;
+  border-color: #3a7063;
+}
+.buttons button:nth-child(2) {
+  background: #64748b;         
+  color: white;
+  border-color: #64748b;
+}
+.buttons button:nth-child(3) {
+  background: #fff4f2;
+  color: #b85c4e;           
+  border-color: #f5d4cc;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.amount p {
+  font-size: 18px;
+  color: #6b665c;
+  margin: 0;
+}
+.amount input {
+  width: 190px;
+  padding: 18px 24px;
+  font-size: 29px;
+  text-align: center;
+  border: 2px solid #e4ded4;
+  border-radius: 16px;
+  background: #fbf9f4;
+  outline: none;
+}
+
+.amount input:focus {
+  border-color: #3a7063;
 }
