@@ -24,8 +24,9 @@ function Project5() {
     { label: "round up", action: () => setCount((a) => Math.ceil(a)) },
     { label: "10%", action: () => setCount((a) => a * 0.1) },
   ]);
+
   const [newLabel, setNewLabel] = useState("");
-  const [newValue, setNewValue] = useState(0);
+  const [newValue, setNewValue] = useState(null);
   const [showCustomBtnPopUp, setShowCustomBtnPopUp] = useState(false);
   const maxLimitAmount = 100;
 

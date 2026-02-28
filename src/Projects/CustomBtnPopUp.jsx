@@ -8,17 +8,17 @@ function CustomBtnPopUp({
 }) {
   return (
     <div className="customBtnPopUp-overlay">
-      <h3>create new Button</h3>
       <div className="customBtnPopUp-content">
+        <h3>create new Button</h3>
         <input
           type="text"
-          placeholder="Button name for example +67 or count to the power of 21"
+          placeholder="Button name"
           value={newLabel}
           onChange={(e) => setNewLabel(e.target.value)}
         />
         <input
           type="text"
-          placeholder="Value"
+          placeholder="action for example +67 or *2"
           value={newValue}
           onChange={(e) => setNewValue(e.target.value)}
         />

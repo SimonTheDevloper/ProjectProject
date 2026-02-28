@@ -324,5 +324,5 @@
 .addCustomBtn:hover {
   background: #3a7063 !important;
   color: white !important;
-  border-style: solid !important;
-}
+  border-style: solid !important; 
+} 
