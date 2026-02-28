@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CounterBtn from "./CounterBtn.jsx";
 import CustomBtnPopUp from "./customBtnPopUp.jsx";
 import { evaluate } from "mathjs";
 
 function Project5() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(() => {
+    const gespeichert = localStorage.getItem("count");
+    return gespeichert !== null ? gespeichert : "";
+  });
   const [amount, setAmount] = useState(1);
   const [error, setError] = useState(null);
   const [btns, setBtns] = useState([
@@ -24,11 +27,15 @@ function Project5() {
     { label: "round up", action: () => setCount((a) => Math.ceil(a)) },
     { label: "10%", action: () => setCount((a) => a * 0.1) },
   ]);
-
   const [newLabel, setNewLabel] = useState("");
   const [newValue, setNewValue] = useState(null);
   const [showCustomBtnPopUp, setShowCustomBtnPopUp] = useState(false);
   const maxLimitAmount = 100;
+
+  useEffect(() => {
+    // fürt das bei jeder count änderung aus
+    localStorage.setItem("count", count);
+  }, [count]);
 
   const addEigenenBtn = () => {
     const newBtn = {
