@@ -326,3 +326,46 @@
   color: white !important;
   border-style: solid !important; 
 } 
+.Project6container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 400px;
+}
+
+.Project6form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Project6radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.Project6list {
+  list-style: none;
+  padding: 0;
+}
+
+.Project6list-item {
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.Project6list-item small {
+  color: gray;
+}
+
+.Project6delete {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

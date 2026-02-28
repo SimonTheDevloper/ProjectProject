@@ -2,6 +2,7 @@ import Project2 from "./Projects/Project2.jsx";
 import Project3 from "./Projects/Project3.jsx";
 import Project4 from "./Projects/Project4.jsx";
 import Project5 from "./Projects/Project5.jsx";
+import Project6 from "./Projects/Project6.jsx";
 
 function ProjectArea({ activeProject }) {
   return (
@@ -11,6 +12,7 @@ function ProjectArea({ activeProject }) {
       {activeProject === 3 && <Project3 />}
       {activeProject === 4 && <Project4 />}
       {activeProject === 5 && <Project5 />}
+      {activeProject === 6 && <Project6 />}
     </>
   );
 }
